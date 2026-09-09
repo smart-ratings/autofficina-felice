@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reindirizzamento in corso...</title>
+
+    <!-- INIZIO CODICE GOOGLE ANALYTICS -->
+    <!-- Sostituisci G-XXXXXXXXXX con il tuo vero ID di misurazione di Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        // URL di destinazione (Google Recensioni)
+        var destinazione = "https://search.google.com/local/writereview?placeid=ChIJY7bLCBM1ekcRInTCe1Ue48E";
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        // Invia la visualizzazione di pagina e, appena completata, fai il redirect
+        gtag('config', 'G-XXXXXXXXXX', {
+            'event_callback': function() {
+                window.location.replace(destinazione);
+            }
+        });
+
+        // FALLBACK DI SICUREZZA: 
+        // Se l'utente usa un AdBlock (che blocca Analytics) o la connessione è lenta,
+        // forziamo comunque il redirect dopo 800 millisecondi per non bloccarlo qui.
+        setTimeout(function() {
+            window.location.replace(destinazione);
+        }, 800);
+    </script>
+    <!-- FINE CODICE GOOGLE ANALYTICS -->
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #5f6368;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e8eaed;
+            border-top: 4px solid #1a73e8;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        a { color: #1a73e8; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="spinner"></div>
+    <p>Apertura Google Recensioni in corso...</p>
+    
+    <p style="font-size: 14px; margin-top: 20px;">
+        Se non vieni reindirizzato, <a href="https://search.google.com/local/writereview?placeid=ChIJY7bLCBM1ekcRInTCe1Ue48E">clicca qui</a>.
+    </p>
+
+</body>
+</html>
